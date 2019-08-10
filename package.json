@@ -1,0 +1,29 @@
+{
+  "name": "cocktail-gacha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "start": "http-server -0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "http-server": "^0.11.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
