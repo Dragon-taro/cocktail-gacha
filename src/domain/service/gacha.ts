@@ -2,12 +2,12 @@ import {
   Liqueur,
   Base,
   Secret,
-  CocktailState,
+  Cocktail,
   Translator,
   Material
 } from "../entity/cocktail";
 
-export default class Gacha implements GachaImpl {
+export default class GachaService implements GachaImpl {
   private liqueur: Liqueur;
   private base: Base;
   private secret?: Secret;
@@ -22,7 +22,8 @@ export default class Gacha implements GachaImpl {
     const baseJa = this.translate(Material.Base) || "";
     const secretJa = this.translate(Material.Secret);
 
-    const state: CocktailState = {
+    // redux側でのinterfaceに合わせる
+    const state: Cocktail = {
       liqueur: liqueurJa,
       base: baseJa,
       secret: secretJa,
@@ -66,5 +67,5 @@ export default class Gacha implements GachaImpl {
 }
 
 export interface GachaImpl {
-  getState(): CocktailState;
+  getState(): Cocktail;
 }

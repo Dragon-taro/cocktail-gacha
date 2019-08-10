@@ -1,4 +1,4 @@
-import Gacha from "../../domain/service/gacha";
+import GachaService from "../../domain/service/gacha";
 import {
   Liqueur,
   Translator,
@@ -25,7 +25,7 @@ describe("random()のmock化テスト", () => {
 describe("ガチャのテスト", () => {
   it("randomが0.5以上のときに隠し味がundefinedになってるか", () => {
     mockMath(0.5);
-    const gacha = new Gacha();
+    const gacha = new GachaService();
     const state = gacha.getState();
 
     expect(state.secret).toBe(undefined);
@@ -33,7 +33,7 @@ describe("ガチャのテスト", () => {
 
   it("randomが0.5未満のときに隠し味が設定されているか", () => {
     mockMath(0.49);
-    const gacha = new Gacha();
+    const gacha = new GachaService();
     const state = gacha.getState();
 
     expect(state.secret).toBe("ベルモット");
@@ -41,7 +41,7 @@ describe("ガチャのテスト", () => {
 
   it("randomが0.1のときに想定どうりの結果になってるか", () => {
     mockMath(0.1);
-    const gacha = new Gacha();
+    const gacha = new GachaService();
     const state = gacha.getState();
     const expected = {
       base: "パイナップル",

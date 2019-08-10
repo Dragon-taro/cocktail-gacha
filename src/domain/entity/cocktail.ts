@@ -1,4 +1,4 @@
-export interface CocktailState {
+export interface Cocktail {
   name: string;
   liqueur: string;
   base: string;
