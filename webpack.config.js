@@ -1,26 +1,31 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: "./src/index.tsx",
   output: {
     path: path.join(__dirname, "static/js"),
     filename: "bundle.js"
   },
   resolve: {
     modules: ["node_modules"],
-    extensions: [".js", ".jsx"]
+    extensions: [".ts", ".tsx", ".js", "jsx"]
   },
   module: {
     rules: [
       {
-        test: /(\.js|\.jsx)$/,
+        test: /(\.ts|\.tsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"]
+            }
+          },
+          {
+            loader: "ts-loader"
           }
-        }
+        ]
       }
     ]
   }
