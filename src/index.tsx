@@ -4,11 +4,14 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import rootReducer from "./redux/rootReducer";
+import Index from "./components/pages/index/container";
 
 const store = createStore(rootReducer);
 
 const App: React.FunctionComponent = () => (
-  <Provider store={store}>hello</Provider>
+  <Provider store={store}>
+    <Index />
+  </Provider>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
