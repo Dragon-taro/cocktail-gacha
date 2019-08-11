@@ -7,14 +7,17 @@ const init: Cocktail = {
   name: ""
 };
 
+const reducer: {
+  [key: string]: (state: Cocktail, payload: Cocktail) => Cocktail;
+} = {
+  [EXEC_GACHA]: (_, payload) => payload
+};
+
 export const cocktailReducer = (
   state: Cocktail = init,
   action: CocktailActions
 ): Cocktail => {
-  switch (action.type) {
-    case EXEC_GACHA:
-      return action.payload;
-    default:
-      return state;
-  }
+  const { payload, type } = action;
+
+  return reducer[type](state, payload) || state;
 };
