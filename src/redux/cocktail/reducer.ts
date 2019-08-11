@@ -18,6 +18,7 @@ export const cocktailReducer = (
   action: CocktailActions
 ): Cocktail => {
   const { payload, type } = action;
+  const _reducer = reducer[type];
 
-  return reducer[type](state, payload) || state;
+  return _reducer ? _reducer(state, payload) : state;
 };
