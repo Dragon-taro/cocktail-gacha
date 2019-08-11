@@ -3,7 +3,7 @@ import { Props } from "./type";
 
 const Index: React.FunctionComponent<Props> = props => {
   const {
-    cocktail: { name, liqueur, base, secret },
+    cocktail: { name, base, base2, accent: secret },
     execGacha
   } = props;
 
@@ -13,8 +13,8 @@ const Index: React.FunctionComponent<Props> = props => {
       <button onClick={() => execGacha()}>ガチャる</button>
       {name && <h2>カクテル名: {name}</h2>}
       <div>
-        {liqueur && <div>リキュール: {liqueur}</div>}
-        {base && <div>ベース: {base}</div>}
+        {base && <div>リキュール: {base}</div>}
+        {base2 && <div>ベース: {base2}</div>}
         {secret && <div>隠し味: {secret}</div>}
       </div>
     </div>

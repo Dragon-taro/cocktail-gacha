@@ -2,8 +2,8 @@ import { CocktailActions, EXEC_GACHA } from "./actions";
 import { Cocktail } from "../../domain/entity/cocktail";
 
 const init: Cocktail = {
-  liqueur: "",
   base: "",
+  base2: "",
   name: ""
 };
 

@@ -1,10 +1,11 @@
 export interface Cocktail {
   name: string;
-  liqueur: string;
   base: string;
+  base2: string;
   accent?: string;
 }
 
+// リキュール
 export enum Liqueur {
   Malibu,
   Peach,
@@ -14,6 +15,7 @@ export enum Liqueur {
   Lychee
 }
 
+// カクテルの割材
 export enum Base {
   Pineapple,
   Orange,
@@ -22,6 +24,7 @@ export enum Base {
   Soda
 }
 
+// カクテルの隠し味
 export enum Accent {
   Gin,
   Honey,
@@ -29,10 +32,43 @@ export enum Accent {
   Vermut
 }
 
+// カクテルの材料
 export enum Material {
   Liqueur,
   Base,
   Accent
+}
+
+// ノンアルのベース
+export enum NonAlcoholBase {
+  Pineapple,
+  Orange,
+  Cola,
+  Ginger
+}
+
+// ノンアルのベース
+export enum NonAlcoholBase2 {
+  Pineapple,
+  Orange,
+  Cola,
+  Ginger,
+  Calpis
+}
+
+// ノンアルの隠し味
+export enum NonAlcoholAccent {
+  Grenadine,
+  Lime,
+  Lemon,
+  GumSyrup
+}
+
+// ノンアルの材料
+export enum NonAlcoholMaterial {
+  NonAlcoholBase,
+  NonAlcoholBase2,
+  NonAlcoholAccent
 }
 
 export const Translator: { [key: string]: string } = {
@@ -50,5 +86,12 @@ export const Translator: { [key: string]: string } = {
   Gin: "ジン",
   Honey: "はちみつ",
   Rum: "ラム",
-  Vermut: "ベルモット"
+  Vermut: "ベルモット",
+  Cola: "コーラ",
+  Ginger: "ジンジャー",
+  Calpis: "カルピス",
+  Grenadine: "グレナデンシロップ",
+  Lime: "ライムジュース",
+  Lemon: "レモンジュース",
+  GumSyrup: "ガムシロップ"
 };

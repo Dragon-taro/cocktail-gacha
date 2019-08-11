@@ -1,9 +1,9 @@
 import { Dispatch } from "redux";
+import { connect } from "react-redux";
 
 import { execGacha } from "../../../redux/cocktail/actions";
-import GachaService from "../../../domain/service/gacha";
+import CocktailGachaService from "../../../domain/service/cocktailGacha";
 import { StateProps } from "./type";
-import { connect } from "react-redux";
 import Index from "./presentation";
 
 const mapStateToProps = (state: StateProps): StateProps => ({
@@ -12,7 +12,7 @@ const mapStateToProps = (state: StateProps): StateProps => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   execGacha: () => {
-    dispatch(execGacha(new GachaService()));
+    dispatch(execGacha(new CocktailGachaService()));
   }
 });
 
