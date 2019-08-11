@@ -3,7 +3,7 @@ import {
   Liqueur,
   Translator,
   Base,
-  Secret
+  Accent
 } from "../../domain/entity/cocktail";
 
 // random()をmock化
@@ -28,7 +28,7 @@ describe("ガチャのテスト", () => {
     const gacha = new GachaService();
     const state = gacha.getState();
 
-    expect(state.secret).toBe(undefined);
+    expect(state.accent).toBe(undefined);
   });
 
   it("randomが0.5未満のときに隠し味が設定されているか", () => {
@@ -36,7 +36,7 @@ describe("ガチャのテスト", () => {
     const gacha = new GachaService();
     const state = gacha.getState();
 
-    expect(state.secret).toBe("ベルモット");
+    expect(state.accent).toBe("ベルモット");
   });
 
   it("randomが0.1のときに想定どうりの結果になってるか", () => {
@@ -78,12 +78,12 @@ describe("翻訳のテスト", () => {
   });
 
   it("Secretの翻訳が全部登録されているか", () => {
-    const keys = Object.keys(Secret);
+    const keys = Object.keys(Accent);
     keys
       .filter(k => /\d/.test(k))
       .map(k => Number(k))
       .forEach(k => {
-        const secretJa = Translator[Secret[k]];
+        const secretJa = Translator[Accent[k]];
         expect(secretJa).not.toBe(undefined);
       });
   });

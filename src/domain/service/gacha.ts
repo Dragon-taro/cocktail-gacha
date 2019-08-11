@@ -1,7 +1,7 @@
 import {
   Liqueur,
   Base,
-  Secret,
+  Accent,
   Cocktail,
   Translator,
   Material
@@ -10,7 +10,7 @@ import {
 export default class GachaService implements GachaImpl {
   private liqueur: Liqueur;
   private base: Base;
-  private secret?: Secret;
+  private accent?: Accent;
 
   constructor() {
     this.execGacha();
@@ -20,13 +20,13 @@ export default class GachaService implements GachaImpl {
     // 翻訳
     const liqueurJa = this.translate(Material.Liqueur) || "";
     const baseJa = this.translate(Material.Base) || "";
-    const secretJa = this.translate(Material.Secret);
+    const secretJa = this.translate(Material.Accent);
 
     // redux側でのinterfaceに合わせる
     const state: Cocktail = {
       liqueur: liqueurJa,
       base: baseJa,
-      secret: secretJa,
+      accent: secretJa,
       name: liqueurJa + baseJa
     };
 
@@ -39,9 +39,9 @@ export default class GachaService implements GachaImpl {
         return Translator[Liqueur[this.liqueur]];
       case Material.Base:
         return Translator[Base[this.base]];
-      case Material.Secret:
-        return this.secret !== undefined
-          ? Translator[Secret[this.secret]]
+      case Material.Accent:
+        return this.accent !== undefined
+          ? Translator[Accent[this.accent]]
           : undefined;
     }
   }
@@ -50,7 +50,7 @@ export default class GachaService implements GachaImpl {
     // enumの長さを取得
     const liqueurLength = Object.keys(Liqueur).length / 2;
     const baseLength = Object.keys(Base).length / 2;
-    const secretLength = Object.keys(Secret).length / 2;
+    const secretLength = Object.keys(Accent).length / 2;
 
     // indexをセット
     this.liqueur = this.random(liqueurLength);
@@ -58,7 +58,7 @@ export default class GachaService implements GachaImpl {
 
     // optionalのやつは確率1/2
     const secretRandom = this.random(secretLength * 2);
-    this.secret = secretRandom < secretLength ? secretRandom : undefined;
+    this.accent = secretRandom < secretLength ? secretRandom : undefined;
   }
 
   private random(len: number): number {

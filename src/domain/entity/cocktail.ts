@@ -2,7 +2,7 @@ export interface Cocktail {
   name: string;
   liqueur: string;
   base: string;
-  secret?: string;
+  accent?: string;
 }
 
 export enum Liqueur {
@@ -22,7 +22,7 @@ export enum Base {
   Soda
 }
 
-export enum Secret {
+export enum Accent {
   Gin,
   Honey,
   Rum,
@@ -32,7 +32,7 @@ export enum Secret {
 export enum Material {
   Liqueur,
   Base,
-  Secret
+  Accent
 }
 
 export const Translator: { [key: string]: string } = {
