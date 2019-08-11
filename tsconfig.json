@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./static/js",
+    "outDir": "public/js",
     "sourceMap": true,
     "strictPropertyInitialization": false,
     "strictNullChecks": true,
