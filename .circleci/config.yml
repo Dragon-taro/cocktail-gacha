@@ -1,0 +1,63 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:8
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - cocktail-gacha-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - cocktail-gacha-{{ .Branch }}
+      - run:
+          name: yarn install
+          command: yarn install
+      - run:
+          name: build
+          command: yarn build
+      - save_cache:
+          key: cocktail-gacha-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+      - persist_to_workspace:
+          root: ./public
+          paths:
+            - ./public
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: test
+          command: yarn test
+
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./public
+      - run:
+          name: install now
+          command: yarn install -g now
+      - run:
+          name: deplooy
+          command: now -t ${NOW_TOKEN}
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          filters:
+            branches:
+              only: master
