@@ -24,7 +24,7 @@ jobs:
           paths:
             - "node_modules"
       - persist_to_workspace:
-          root: ~/cocktail-gacha
+          root: .
           paths:
             - public
 
@@ -41,7 +41,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/cocktail-gacha
+          at: .
       - run:
           name: install now
           command: sudo yarn install -g now
