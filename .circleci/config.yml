@@ -44,7 +44,7 @@ jobs:
           at: ./public
       - run:
           name: install now
-          command: yarn install -g now
+          command: sudo yarn install -g now
       - run:
           name: deplooy
           command: now -t ${NOW_TOKEN}
@@ -58,6 +58,8 @@ workflows:
           requires:
             - build
       - deploy:
+          requires:
+            - test
           filters:
             branches:
               only: master
