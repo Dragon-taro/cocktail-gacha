@@ -9,9 +9,12 @@ import Button from "../../parts/Button";
 const Index: React.FunctionComponent<Props> = props => {
   const {
     cocktail: { name, base, base2, accent: secret },
+    loading,
     execGacha,
     execNonAlcoholGacha
   } = props;
+
+  console.log(loading);
 
   return (
     <div className={classNames(container)}>
@@ -20,12 +23,6 @@ const Index: React.FunctionComponent<Props> = props => {
       <Button onClick={() => execNonAlcoholGacha()}>
         ガチャる（ノンアル）
       </Button>
-      {name && <h2>カクテル名: {name}</h2>}
-      <div>
-        {base && <div>ベース: {base}</div>}
-        {base2 && <div>割材: {base2}</div>}
-        {secret && <div>隠し味: {secret}</div>}
-      </div>
     </div>
   );
 };
