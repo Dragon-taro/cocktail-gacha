@@ -5,13 +5,13 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
 import rootReducer from "./redux/rootReducer";
-import Index from "./components/pages/Index/container";
+import Application from "./components/app/Application/container";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const App: React.FunctionComponent = () => (
   <Provider store={store}>
-    <Index />
+    <Application />
   </Provider>
 );
 
