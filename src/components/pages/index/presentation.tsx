@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Props } from "./type";
+import * as styles from "./style.css";
 
 const Index: React.FunctionComponent<Props> = props => {
   const {
@@ -8,8 +9,10 @@ const Index: React.FunctionComponent<Props> = props => {
     execNonAlcoholGacha
   } = props;
 
+  console.log(styles.container);
+
   return (
-    <div>
+    <div className={styles.container}>
       <h1>カクテルガチャ</h1>
       <button onClick={() => execGacha()}>ガチャる（カクテル）</button>
       <button onClick={() => execNonAlcoholGacha()}>
@@ -17,8 +20,8 @@ const Index: React.FunctionComponent<Props> = props => {
       </button>
       {name && <h2>カクテル名: {name}</h2>}
       <div>
-        {base && <div>リキュール: {base}</div>}
-        {base2 && <div>ベース: {base2}</div>}
+        {base && <div>ベース: {base}</div>}
+        {base2 && <div>割材: {base2}</div>}
         {secret && <div>隠し味: {secret}</div>}
       </div>
     </div>
