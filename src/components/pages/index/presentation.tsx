@@ -7,19 +7,14 @@ import { container } from "./style.css";
 import Button from "../../parts/Button";
 
 const Index: React.FunctionComponent<Props> = props => {
-  const {
-    cocktail: { name, base, base2, accent: secret },
-    loading,
-    execGacha,
-    execNonAlcoholGacha
-  } = props;
-
-  console.log(loading);
+  const { execGacha, execNonAlcoholGacha } = props;
 
   return (
     <div className={classNames(container)}>
       <h1>カクテルガチャ</h1>
+      <p>カクテルガチャを回す</p>
       <Button onClick={() => execGacha()}>ガチャる（カクテル）</Button>
+      <p>ノンアルの方はこちら</p>
       <Button onClick={() => execNonAlcoholGacha()}>
         ガチャる（ノンアル）
       </Button>

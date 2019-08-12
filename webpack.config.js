@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: ["./src/index.tsx", "babel-polyfill"],
   output: {
     path: path.join(__dirname, "public/js"),
     filename: "bundle.js"
@@ -17,22 +17,13 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "thread-loader"
-          },
-          {
-            loader: "cache-loader"
-          },
-          {
             loader: "babel-loader",
             options: {
               presets: ["@babel/preset-env", "@babel/preset-react"]
             }
           },
           {
-            loader: "ts-loader",
-            options: {
-              happyPackMode: true
-            }
+            loader: "ts-loader"
           }
         ]
       },
