@@ -51,7 +51,7 @@ jobs:
           at: .
       - run:
           name: install now
-          command: sudo yarn install -g now
+          command: sudo yarn global add now
       - run:
           name: deplooy
           command: now -t ${NOW_TOKEN}
