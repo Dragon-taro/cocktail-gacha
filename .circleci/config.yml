@@ -32,6 +32,13 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - cocktail-gacha-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - cocktail-gacha-{{ .Branch }}
+      - run:
+          name: yarn install
+          command: yarn install
       - run:
           name: test
           command: yarn test
