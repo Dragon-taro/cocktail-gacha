@@ -2,11 +2,13 @@ import * as React from "react";
 import classNames from "classnames";
 
 import { Props } from "./type";
+import Button from "../../parts/Button";
 import { container } from "./style.css";
 
 const Result: React.FunctionComponent<Props> = props => {
   const {
-    cocktail: { name, base, base2, accent: secret }
+    cocktail: { name, base, base2, accent: secret },
+    backToTop
   } = props;
 
   return (
@@ -18,6 +20,7 @@ const Result: React.FunctionComponent<Props> = props => {
         {base2 && <div>割材: {base2}</div>}
         {secret && <div>隠し味: {secret}</div>}
       </div>
+      <Button onClick={backToTop}>Topに戻る</Button>
     </div>
   );
 };

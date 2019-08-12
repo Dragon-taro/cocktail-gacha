@@ -5,6 +5,8 @@ export interface StateProps {
   cocktail: Cocktail;
 }
 
-export interface DisaptchProps {}
+export interface DisaptchProps {
+  backToTop: () => void;
+}
 
 export type Props = StateProps & DisaptchProps;

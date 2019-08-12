@@ -1,4 +1,4 @@
-import { LOADING, LoadingAction, LOADED } from "./actions";
+import { LOADING, LoadingAction, LOADED, RESET } from "./actions";
 import { Loading } from "../../domain/entity/loading";
 
 const init: Loading = {
@@ -14,9 +14,12 @@ const reducer: {
     loading: true
   }),
   [LOADED]: state => ({
-    ...state,
     loading: false,
     isDoneGacha: true
+  }),
+  [RESET]: state => ({
+    loading: false,
+    isDoneGacha: false
   })
 };
 
