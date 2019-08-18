@@ -12,4 +12,4 @@ katharsis での hacker's bar 用のカクテルガチャ
 
 ### `/redux`
 
-re-ducks パターンで実装。loading の timeout には redux-thunk を使ってる
+re-ducks パターンで実装。loading の timeout には redux-thunk を使ってる。

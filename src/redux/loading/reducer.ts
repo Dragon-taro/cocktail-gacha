@@ -13,11 +13,11 @@ const reducer: {
     ...state,
     loading: true
   }),
-  [LOADED]: state => ({
+  [LOADED]: _state => ({
     loading: false,
     isDoneGacha: true
   }),
-  [RESET]: state => ({
+  [RESET]: _state => ({
     loading: false,
     isDoneGacha: false
   })

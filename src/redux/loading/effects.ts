@@ -1,10 +1,10 @@
 import { Dispatch } from "redux";
-import { LoadingAction, loading, loaded } from "./actions";
+import { loading, loaded } from "./actions";
 
 export const setLoading = () => async (dispatch: Dispatch) => {
   dispatch(loading());
 
-  // 5s待ってからロードを終わらせる
+  // 2s待ってからロードを終わらせる
   await sleep(2000);
 
   dispatch(loaded());
