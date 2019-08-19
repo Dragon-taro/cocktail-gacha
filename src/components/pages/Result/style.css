@@ -3,3 +3,88 @@
   width: 95%;
   margin: 10% auto;
 }
+
+.container table {
+  border-collapse: collapse;
+}
+
+.resultContent {
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 20%;
+}
+
+.tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.tr th,
+.tr td {
+  padding: 5px 15px;
+}
+
+.animation1 {
+  animation: animation1 2s ease;
+}
+
+.animation2 {
+  animation: animation2 2s ease;
+}
+
+.animation3 {
+  animation: animation3 2s ease;
+}
+
+.animation4 {
+  animation: animation4 2s ease;
+}
+
+@keyframes animation1 {
+  0% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  25%,
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animation2 {
+  0%,
+  25% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  50%,
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animation3 {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  75%,
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animation4 {
+  0%,
+  75% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

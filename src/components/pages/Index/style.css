@@ -1,5 +1,10 @@
 .container {
   max-width: 1000px;
   width: 95%;
-  margin: 10% auto;
+  /* margin: 20% auto; */
+  text-align: center;
+}
+
+.content {
+  margin: 3rem 0;
 }

@@ -3,7 +3,15 @@ import classNames from "classnames";
 
 import { Props } from "./type";
 import Button from "../../parts/Button";
-import { container } from "./style.css";
+import {
+  container,
+  resultContent,
+  tr,
+  animation1,
+  animation2,
+  animation3,
+  animation4
+} from "./style.css";
 
 const Result: React.FunctionComponent<Props> = props => {
   const {
@@ -13,13 +21,29 @@ const Result: React.FunctionComponent<Props> = props => {
 
   return (
     <div className={classNames(container)}>
-      <h1>カクテルガチャ</h1>
-      {name && <h2>カクテル名: {name}</h2>}
-      <div>
-        {base && <div>ベース: {base}</div>}
-        {base2 && <div>割材: {base2}</div>}
-        {secret && <div>隠し味: {secret}</div>}
-      </div>
+      {name && <h2 className={animation1}>{name}</h2>}
+      <table className={resultContent}>
+        <tbody>
+          {base && (
+            <tr className={classNames(tr, animation2)}>
+              <th>ベース</th>
+              <td>{base}</td>
+            </tr>
+          )}
+          {base2 && (
+            <tr className={classNames(tr, animation3)}>
+              <th>割材</th>
+              <td>{base2}</td>
+            </tr>
+          )}
+          {secret && (
+            <tr className={classNames(tr, animation4)}>
+              <th>隠し味</th>
+              <td>{secret}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
       <Button onClick={backToTop}>Topに戻る</Button>
     </div>
   );
