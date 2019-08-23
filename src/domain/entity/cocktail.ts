@@ -83,11 +83,10 @@ export enum AmazingLiqueur {
 // やばいカクテルの割材
 export enum AmazingBase {
   Soda,
-  Ginger,
   Tonic,
-  Cola,
   Akueri,
-  Energy
+  Energy,
+  HotWater
 }
 
 // やばいカクテルの隠し味
@@ -96,7 +95,8 @@ export enum AmazingAccent {
   Olive,
   Angos,
   Milk,
-  Brandy
+  Brandy,
+  Love
 }
 
 // やばいカクテルの材料
@@ -138,5 +138,7 @@ export const Translator: { [key: string]: string } = {
   Double: "ベース2倍",
   Olive: "オリーブ",
   Angos: "アンゴスティーラ",
-  Brandy: "ブランデー"
+  Brandy: "ブランデー",
+  HotWater: "お湯割",
+  Love: "周雅の愛情"
 };
