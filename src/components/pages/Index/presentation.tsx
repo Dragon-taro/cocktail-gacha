@@ -22,7 +22,9 @@ const Index: React.FunctionComponent<Props> = props => {
           ガチャる（ノンアル）
         </Button>
       </div>
-      <a href="https://github.com/Dragon-taro/cocktail-gacha">GitHub</a>
+      <a href="https://github.com/Dragon-taro/cocktail-gacha" target="_blank">
+        GitHub
+      </a>
     </div>
   );
 };
