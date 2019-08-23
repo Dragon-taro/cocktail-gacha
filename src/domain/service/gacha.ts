@@ -7,7 +7,8 @@ import {
   NonAlcoholMaterial,
   NonAlcoholBase,
   NonAlcoholBase2,
-  NonAlcoholAccent
+  NonAlcoholAccent,
+  AmazingMaterial
 } from "../entity/cocktail";
 
 export default abstract class GachaService {
@@ -24,7 +25,7 @@ export default abstract class GachaService {
   protected abstract execGacha(): void;
 
   protected abstract translate(
-    type: Material | NonAlcoholMaterial
+    type: Material | NonAlcoholMaterial | AmazingMaterial
   ): string | undefined;
 
   protected random(len: number): number {

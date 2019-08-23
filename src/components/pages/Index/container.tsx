@@ -6,6 +6,7 @@ import { StateProps } from "./type";
 import Index from "./presentation";
 import NonAlcoholGachaService from "../../../domain/service/NonAlcoholGacha";
 import { setLoading } from "../../../redux/loading/effects";
+import AmazingGachaService from "../../../domain/service/amazingGacha";
 
 const mapStateToProps = (state: StateProps): StateProps => ({
   cocktail: state.cocktail,
@@ -19,6 +20,10 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
   execNonAlcoholGacha: () => {
     dispatch(execGacha(new NonAlcoholGachaService()));
+    dispatch(setLoading());
+  },
+  execAmazingGacha: () => {
+    dispatch(execGacha(new AmazingGachaService()));
     dispatch(setLoading());
   }
 });

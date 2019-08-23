@@ -71,6 +71,41 @@ export enum NonAlcoholMaterial {
   NonAlcoholAccent
 }
 
+// やばいカクテルのベース
+export enum AmazingLiqueur {
+  Gin,
+  Vodka,
+  Rum,
+  Tequila,
+  Shochu
+}
+
+// やばいカクテルの割材
+export enum AmazingBase {
+  Soda,
+  Ginger,
+  Tonic,
+  Cola,
+  Akueri,
+  Energy
+}
+
+// やばいカクテルの隠し味
+export enum AmazingAccent {
+  Double,
+  Olive,
+  Angos,
+  Milk,
+  Brandy
+}
+
+// やばいカクテルの材料
+export enum AmazingMaterial {
+  AmazingLiqueur,
+  AmazingBase,
+  AmazingAccent
+}
+
 export const Translator: { [key: string]: string } = {
   Malibu: "マリブ",
   Peach: "ピーチ",
@@ -93,5 +128,15 @@ export const Translator: { [key: string]: string } = {
   Grenadine: "グレナデンシロップ",
   Lime: "ライムジュース",
   Lemon: "レモンジュース",
-  GumSyrup: "ガムシロップ"
+  GumSyrup: "ガムシロップ",
+  Vodka: "ウォッカ",
+  Tequila: "テキーラ",
+  Shochu: "焼酎",
+  Tonic: "トニック",
+  Akueri: "アクエリ",
+  Energy: "エナジー",
+  Double: "ベース2倍",
+  Olive: "オリーブ",
+  Angos: "アンゴスティーラ",
+  Brandy: "ブランデー"
 };

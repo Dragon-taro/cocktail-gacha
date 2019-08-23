@@ -7,7 +7,7 @@ import { container, content } from "./style.css";
 import Button from "../../parts/Button";
 
 const Index: React.FunctionComponent<Props> = props => {
-  const { execGacha, execNonAlcoholGacha } = props;
+  const { execGacha, execNonAlcoholGacha, execAmazingGacha } = props;
 
   return (
     <div className={classNames(container)}>
@@ -21,6 +21,10 @@ const Index: React.FunctionComponent<Props> = props => {
         <Button onClick={() => execNonAlcoholGacha()}>
           ガチャる（ノンアル）
         </Button>
+      </div>
+      <div className={content}>
+        <p>冒険したい方はこちら</p>
+        <Button onClick={() => execAmazingGacha()}>ガチャる（やばいの）</Button>
       </div>
       <a href="https://github.com/Dragon-taro/cocktail-gacha" target="_blank">
         GitHub
