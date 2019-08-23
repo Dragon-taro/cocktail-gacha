@@ -40,10 +40,7 @@ export default class AmazingGachaService extends GachaService
     // indexをセット
     this.base = this.random(liqueurLength);
     this.base2 = this.random(baseLength);
-
-    // optionalのやつは確率1/2
-    const secretRandom = this.random(accentLength * 2);
-    this.accent = secretRandom < accentLength ? secretRandom : undefined;
+    this.accent = this.random(accentLength);
   }
 
   translate(type: AmazingMaterial): string | undefined {
