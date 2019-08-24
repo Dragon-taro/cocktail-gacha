@@ -77,7 +77,8 @@ export enum AmazingLiqueur {
   Vodka,
   Rum,
   Tequila,
-  Shochu
+  Shochu,
+  Macha
 }
 
 // やばいカクテルの割材
@@ -140,5 +141,6 @@ export const Translator: { [key: string]: string } = {
   Angos: "アンゴスティーラ",
   Brandy: "ブランデー",
   HotWater: "お湯割",
-  Love: "周雅の愛情"
+  Love: "周雅の愛情",
+  Macha: "抹茶"
 };
