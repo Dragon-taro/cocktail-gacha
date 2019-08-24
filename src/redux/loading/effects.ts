@@ -5,7 +5,7 @@ export const setLoading = () => async (dispatch: Dispatch) => {
   dispatch(loading());
 
   // 2s待ってからロードを終わらせる
-  await sleep(2000);
+  await sleep(4999);
 
   dispatch(loaded());
 };

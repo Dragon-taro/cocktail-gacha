@@ -8,3 +8,10 @@
   font-size: 16px;
   transition-duration: 0.3s;
 }
+
+.black {
+  color: #333;
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}

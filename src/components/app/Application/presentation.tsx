@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { Props } from "./type";
 import { container } from "./style.css";
 
-import Loading from "../../pages/Loading/Index";
+import Loading from "../../pages/Loading/container";
 import Result from "../../pages/Result/container";
 import Index from "../../pages/Index/container";
 
