@@ -6,6 +6,10 @@
   flex-direction: column;
 }
 
+.loading img {
+  max-width: 100%;
+}
+
 .flash {
   animation: flash 1.5s ease 0s infinite;
 }

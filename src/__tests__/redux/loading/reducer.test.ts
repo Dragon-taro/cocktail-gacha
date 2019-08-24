@@ -4,13 +4,15 @@ import { loading, loaded, reset } from "../../../redux/loading/actions";
 
 const init: Loading = {
   loading: false,
-  isDoneGacha: false
+  isDoneGacha: false,
+  url: ""
 };
 
 describe("loadingReducerが正しく動いているか", () => {
   it("LODING", () => {
     const expected: Loading = {
       loading: true,
+      url: "",
       isDoneGacha: false
     };
 
@@ -20,6 +22,7 @@ describe("loadingReducerが正しく動いているか", () => {
   it("LOADED", () => {
     const expected: Loading = {
       loading: false,
+      url: "",
       isDoneGacha: true
     };
 
@@ -29,6 +32,7 @@ describe("loadingReducerが正しく動いているか", () => {
   it("RESET", () => {
     const expected: Loading = {
       loading: false,
+      url: "",
       isDoneGacha: false
     };
 

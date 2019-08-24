@@ -7,9 +7,9 @@ export interface StateProps {
 }
 
 export interface DisaptchProps {
-  execGacha: () => void;
-  execNonAlcoholGacha: () => void;
-  execAmazingGacha: () => void;
+  execGacha: (url: string) => void;
+  execNonAlcoholGacha: (url: string) => void;
+  execAmazingGacha: (url: string) => void;
 }
 
 export type Props = StateProps & DisaptchProps;

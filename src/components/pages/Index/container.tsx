@@ -14,17 +14,17 @@ const mapStateToProps = (state: StateProps): StateProps => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  execGacha: () => {
+  execGacha: (url: string) => {
     dispatch(execGacha(new CocktailGachaService()));
-    dispatch(setLoading());
+    dispatch(setLoading(url));
   },
-  execNonAlcoholGacha: () => {
+  execNonAlcoholGacha: (url: string) => {
     dispatch(execGacha(new NonAlcoholGachaService()));
-    dispatch(setLoading());
+    dispatch(setLoading(url));
   },
-  execAmazingGacha: () => {
+  execAmazingGacha: (url: string) => {
     dispatch(execGacha(new AmazingGachaService()));
-    dispatch(setLoading());
+    dispatch(setLoading(url));
   }
 });
 

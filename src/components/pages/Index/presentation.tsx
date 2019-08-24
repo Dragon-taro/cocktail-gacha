@@ -14,17 +14,21 @@ const Index: React.FunctionComponent<Props> = props => {
       <h1>カクテルガチャ</h1>
       <div className={content}>
         <p>カクテルガチャを回す</p>
-        <Button onClick={() => execGacha()}>ガチャる（カクテル）</Button>
+        <Button onClick={() => execGacha("create-kacktail.gif")}>
+          ガチャる（カクテル）
+        </Button>
       </div>
       <div className={content}>
         <p>ノンアルの方はこちら</p>
-        <Button onClick={() => execNonAlcoholGacha()}>
+        <Button onClick={() => execNonAlcoholGacha("syuga_biglove.gif")}>
           ガチャる（ノンアル）
         </Button>
       </div>
       <div className={content}>
         <p>冒険したい方はこちら</p>
-        <Button onClick={() => execAmazingGacha()}>ガチャる（やばいの）</Button>
+        <Button onClick={() => execAmazingGacha("mukatsuku.gif")}>
+          ガチャる（やばいの）
+        </Button>
       </div>
       <a href="https://github.com/Dragon-taro/cocktail-gacha" target="_blank">
         GitHub

@@ -4,16 +4,19 @@ import { loading, flash, button } from "./style.css";
 import BlackButton from "../../parts/Button/black";
 import { Props } from "./type";
 
-const Loading: React.FunctionComponent<Props> = ({ skipLoading }) => {
+const Loading: React.FunctionComponent<Props> = ({
+  skipLoading,
+  loading: { url }
+}) => {
   return (
     <div className={loading}>
       <p className={flash}>Creating Cocktail...</p>
       <div>
-        <img src="syuga_biglove.gif" />
+        <img src={url} />
       </div>
       <div className={button}>
         <BlackButton onClick={skipLoading} color="black">
-          周雅をSkip >>
+          Skip >>
         </BlackButton>
       </div>
     </div>

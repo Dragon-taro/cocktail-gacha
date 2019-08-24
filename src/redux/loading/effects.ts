@@ -1,8 +1,8 @@
 import { Dispatch } from "redux";
 import { loading, loaded } from "./actions";
 
-export const setLoading = () => async (dispatch: Dispatch) => {
-  dispatch(loading());
+export const setLoading = (url: string) => async (dispatch: Dispatch) => {
+  dispatch(loading(url));
 
   // 2s待ってからロードを終わらせる
   await sleep(4999);

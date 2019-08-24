@@ -4,7 +4,11 @@ import thunk, { ThunkDispatch } from "redux-thunk";
 import { Loading } from "../../../domain/entity/loading";
 import { setLoading } from "../../../redux/loading/effects";
 import { Action } from "../../../redux/utils/action";
-import { LOADING, LOADED } from "../../../redux/loading/actions";
+import {
+  LOADING,
+  LOADED,
+  LoadingPayload
+} from "../../../redux/loading/actions";
 
 const middlewares: Middleware[] = [thunk];
 const mockStore = configureStore<
@@ -14,15 +18,19 @@ const mockStore = configureStore<
 
 const init: Loading = {
   loading: false,
-  isDoneGacha: false
+  isDoneGacha: false,
+  url: ""
 };
 
 it("非同期の二つのアクションがdispatchされているか", async () => {
-  const loadingExpected: Action<{}> = { type: LOADING };
+  const loadingExpected: Action<LoadingPayload> = {
+    type: LOADING,
+    payload: { url: "" }
+  };
   const loadedExpected: Action<{}> = { type: LOADED };
 
   const store = mockStore(init);
-  await store.dispatch(setLoading());
+  await store.dispatch(setLoading(""));
   const actions = store.getActions();
 
   expect(actions[0]).toEqual(loadingExpected);
